@@ -1,0 +1,12 @@
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\bin\Debug\net6.0\Company.DAL.deps.json
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\bin\Debug\net6.0\Company.DAL.dll
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\bin\Debug\net6.0\Company.DAL.pdb
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.AssemblyInfoInputs.cache
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.AssemblyInfo.cs
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.dll
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\refint\Company.DAL.dll
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.pdb
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\ref\Company.DAL.dll
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.csproj.AssemblyReference.cache
