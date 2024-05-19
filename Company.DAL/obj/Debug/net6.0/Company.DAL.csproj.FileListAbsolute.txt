@@ -10,3 +10,4 @@ C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\Com
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.pdb
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\ref\Company.DAL.dll
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.csproj.AssemblyReference.cache
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.DAL\obj\Debug\net6.0\Company.DAL.sourcelink.json

@@ -18,8 +18,8 @@ namespace CompanyMvc
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            //builder.Services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
             builder.Services.AddScoped<IDepartmentRepo, DepartmentRepo>();
+            builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
 
             var app = builder.Build();
 

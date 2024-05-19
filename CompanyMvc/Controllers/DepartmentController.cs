@@ -30,36 +30,27 @@ namespace CompanyMvc.Controllers
             if (ModelState.IsValid)
             {
                 await _departmentRepo.AddAsync(department);
+                TempData["Message"] = "Department Created Successfully";
                 return RedirectToAction(nameof(Index));
 
             }
             return View(department);
         }
         [HttpGet]
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id is null)
-                return BadRequest();
-            var department = await _departmentRepo.GetByIdAsync(id.Value);
-            if (department is null)
-                return NotFound();
-            return View(department);
-        }
+        public Task<IActionResult> Details(int? id) => ReturnViewWithDepartment(id, nameof(Details));
+
 
         [HttpGet]
-        public async Task<IActionResult> Update(int? id)
-        {
-            if (id is null)
-                return BadRequest();
-            var department = await _departmentRepo.GetByIdAsync(id.Value);
-            if (department is null)
-                return NotFound();
-            return View(department);
-        }
+        public Task<IActionResult> Update(int? id) => ReturnViewWithDepartment(id, nameof(Update));
+
 
         [HttpPost]
-        public IActionResult Update(Department department)
+        public IActionResult Update(Department department, [FromRoute] int? id)
         {
+            if (id != department.Id)
+            {
+                return BadRequest();
+            }
             if (ModelState.IsValid)
             {
                 _departmentRepo.Update(department);
@@ -70,25 +61,32 @@ namespace CompanyMvc.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id is null)
-                return BadRequest();
-            var department = await _departmentRepo.GetByIdAsync(id.Value);
-            if (department is null)
-                return NotFound();
-            return View(department);
+        public Task<IActionResult> Delete(int? id) => ReturnViewWithDepartment(id, nameof(Delete));
 
-        }
         [HttpPost]
-        public async Task<IActionResult> Delete(Department department)
+        public async Task<IActionResult> Delete(Department department, int? id)
         {
+            if (id != department.Id)
+            {
+                return BadRequest();
+            }
             if (ModelState.IsValid)
             {
                 _departmentRepo.Delete(department);
                 return RedirectToAction(nameof(Index));
             }
             return View(department);
+        }
+
+        private async Task<IActionResult> ReturnViewWithDepartment(int? id, string ViewName)
+        {
+            if (id is null)
+                return BadRequest();
+            var department = await _departmentRepo.GetByIdAsync(id.Value);
+            if (department is null)
+                return NotFound();
+            return View(ViewName, department);
+
         }
 
     }

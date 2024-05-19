@@ -13,3 +13,4 @@ C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\Com
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.BLL\obj\Debug\net6.0\refint\Company.BLL.dll
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.BLL\obj\Debug\net6.0\Company.BLL.pdb
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.BLL\obj\Debug\net6.0\ref\Company.BLL.dll
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\Company.BLL\obj\Debug\net6.0\Company.BLL.sourcelink.json

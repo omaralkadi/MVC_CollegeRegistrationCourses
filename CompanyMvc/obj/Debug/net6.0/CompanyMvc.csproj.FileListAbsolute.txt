@@ -251,3 +251,4 @@ C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\Com
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\CompanyMvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\CompanyMvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\CompanyMvc\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\CompanyMvc\obj\Debug\net6.0\CompanyMvc.sourcelink.json
