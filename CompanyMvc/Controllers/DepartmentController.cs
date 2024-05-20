@@ -1,7 +1,6 @@
 ﻿using Company.BLL.Interface;
 using Company.DAL.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace CompanyMvc.Controllers
 {
@@ -42,7 +41,7 @@ namespace CompanyMvc.Controllers
 
 
         [HttpGet]
-        public  Task<IActionResult> Update(int? id) => ReturnViewWithDepartment(id, nameof(Update));
+        public Task<IActionResult> Update(int? id) => ReturnViewWithDepartment(id, nameof(Update));
 
 
         [HttpPost]
@@ -80,9 +79,10 @@ namespace CompanyMvc.Controllers
                     await _unitOfWork.Complete();
                     return RedirectToAction(nameof(Index));
 
-                }catch (Exception ex) 
+                }
+                catch (Exception ex)
                 {
-                    ModelState.AddModelError("","This Department Has Enrolled Employees");
+                    ModelState.AddModelError("", "This Department Has Enrolled Employees");
                 }
 
             }

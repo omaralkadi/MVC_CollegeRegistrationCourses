@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using Company.DAL.Entities;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Company.DAL.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace CompanyMvc.ViewModels
@@ -22,6 +20,8 @@ namespace CompanyMvc.ViewModels
         public string Email { get; set; }
         [Phone]
         public string Phone { get; set; }
+        public IFormFile? Image { get; set; }
+        public string? ImageName { get; set; }
         public Department? departnment { get; set; }
         public int? DepartmentId { get; set; }
 

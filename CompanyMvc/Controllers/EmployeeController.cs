@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Company.BLL.Interface;
 using Company.DAL.Entities;
+using CompanyMvc.Utilities;
 using CompanyMvc.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace CompanyMvc.Controllers
 {
@@ -43,10 +43,13 @@ namespace CompanyMvc.Controllers
         {
             if (ModelState.IsValid)
             {
+                employeeVM.ImageName = DocumentSetting.UploadFile(employeeVM.Image, "Images");
                 var MappedEmployees = _mapper.Map<Employee>(employeeVM);
-
                 await _unitOfWork.EmployeeRepo.AddAsync(MappedEmployees);
-                await _unitOfWork.Complete();
+                if(await _unitOfWork.Complete()<=0)
+                {
+                    DocumentSetting.DeleteFile(employeeVM.ImageName,"Images");
+                }
                 TempData["Message"] = "Employee Created Successfully";
                 return RedirectToAction(nameof(Index));
 
@@ -76,6 +79,12 @@ namespace CompanyMvc.Controllers
             }
             if (ModelState.IsValid)
             {
+                if (employeeVM.Image is not null)
+                {
+                    DocumentSetting.DeleteFile(employeeVM.ImageName,"Images");
+                    employeeVM.ImageName = DocumentSetting.UploadFile(employeeVM.Image, "Images");
+
+                }
                 var MappedEmployees = _mapper.Map<Employee>(employeeVM);
 
                 _unitOfWork.EmployeeRepo.Update(MappedEmployees);
@@ -103,7 +112,10 @@ namespace CompanyMvc.Controllers
                 var MappedEmployees = _mapper.Map<Employee>(employeeVM);
 
                 _unitOfWork.EmployeeRepo.Delete(MappedEmployees);
-                await _unitOfWork.Complete();
+                if (await _unitOfWork.Complete() > 0)
+                {
+                    DocumentSetting.DeleteFile(employeeVM.ImageName, "Images");
+                }
                 return RedirectToAction(nameof(Index));
             }
             return View(employeeVM);

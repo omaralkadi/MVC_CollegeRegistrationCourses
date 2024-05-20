@@ -3,7 +3,12 @@
     ViewData["Title"] = "Create";
 }
 <h1 class="pb-4">Delete Employee</h1>
+<div class="form-control">
+    <img src="~/Files/Images/@Model.ImageName" style="width:100px ;height:100px" />
+
+</div>
 <form asp-action="Delete" id="deleteForm">
+    <input hidden asp-for="ImageName"/>
 
     <partial name="partial//DeleteDetailsPartialView"></partial>
     <input type="submit" class="btn btn-danger" value="Delete" id="deleteButton" />

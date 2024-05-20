@@ -3,7 +3,7 @@ using Company.DAL.Entities;
 
 namespace CompanyMvc.ViewModels
 {
-    public class EmployeeProfile:Profile
+    public class EmployeeProfile : Profile
     {
         public EmployeeProfile()
         {

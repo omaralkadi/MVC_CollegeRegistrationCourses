@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Company.DAL.Entities
 {
@@ -24,6 +19,7 @@ namespace Company.DAL.Entities
         public string Email { get; set; }
         [Phone]
         public string Phone { get; set; }
+        public string? ImageName { get; set; }
         public Department? departnment { get; set; }
         public int? DepartmentId { get; set; }
 

@@ -3,8 +3,12 @@
     ViewData["Title"] = "Create";
 }
 <h1 class="pb-4">Update Employee</h1>
-<form asp-action="Update">
+<div class="form-control">
+    <img src="~/Files/Images/@Model.ImageName" style="width:100px ;height:100px" />
 
+</div>
+<form asp-action="Update" enctype="multipart/form-data">
+    <input hidden asp-for="ImageName"/>
     <partial name="partial//CreateUpdatePartialView"></partial>
 
 
