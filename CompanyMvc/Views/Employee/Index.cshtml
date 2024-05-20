@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EmployeeVM>;
+﻿@model PaginationVM;
 
 @{
     ViewData["Title"] = "Employees";
@@ -27,32 +27,32 @@
     </form>
 
 </div>
-@if (Model.Count() > 0)
+@if (Model.Employees.Count() > 0)
 {
 
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Image)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Name)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Salary)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.departnment)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Age)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.IsActive)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Address)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Email)</th>
-                    <th scope="col">@Html.DisplayNameFor(x => x.Phone)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Image)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Name)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Salary)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().departnment)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Age)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().IsActive)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Address)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Email)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Phone)</th>
                     <th scope="col">Details</th>
                     <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var employee in Model)
+                @foreach (var employee in Model.Employees)
                 {
                     <tr>
-                        <td><img src="~/Files/Images/@employee.ImageName" style="width:50px ;height:50px"/></td>
+                        <td><img src="~/Files/Images/@employee.ImageName" style="width:50px ;height:50px" /></td>
                         <td>@Html.DisplayFor(e => employee.Name)</td>
                         <td>@Html.DisplayFor(e => employee.Salary)</td>
                         <td>@Html.DisplayFor(e => employee.departnment.Name)</td>
@@ -79,6 +79,10 @@
                 }
             </tbody>
         </table>
+        <div class="d-flex justify-content-between">
+            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber - 1)" asp-route-pageSize="@Model.PageSize" class="btn btn-primary @(Model.PageNumber == 1 ? "disabled" : "")">Previous</a>
+            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber + 1)" asp-route-pageSize="@Model.PageSize" class="btn btn-primary @(Model.PageNumber == Model.TotalPages ? "disabled" : "")">Next</a>
+        </div>
     </div>
 }
 else
@@ -87,3 +91,6 @@ else
         No Employees Found
     </div>
 }
+
+
+

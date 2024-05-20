@@ -18,17 +18,39 @@ namespace CompanyMvc.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<IActionResult> Index(string? SeachValue)
+        public async Task<IActionResult> Index(string? SeachValue, int pageNumber = 1, int pageSize = 5)
         {
+            IEnumerable<Employee> employees;
+
             if (string.IsNullOrWhiteSpace(SeachValue))
             {
-                var employees = await _unitOfWork.EmployeeRepo.GetAllAsync();
-                var MappedEmployees = _mapper.Map<IEnumerable<EmployeeVM>>(employees);
-                return View(MappedEmployees);
+                employees = await _unitOfWork.EmployeeRepo.GetAllAsync();
             }
-            var returnedEmps = _unitOfWork.EmployeeRepo.GetAllByName(e => e.Name.ToLower().Contains(SeachValue.ToLower()));
-            var ReturnedMapped = _mapper.Map<IEnumerable<EmployeeVM>>(returnedEmps);
-            return View(ReturnedMapped);
+            else
+            {
+                employees = _unitOfWork.EmployeeRepo.GetAllByName(e => e.Name.ToLower().Contains(SeachValue.ToLower()));
+
+            }
+            var MappedEmployee = _mapper.Map<IEnumerable<EmployeeVM>>(employees);
+            // Set pagination properties
+            var totalRecords = MappedEmployee.Count();
+
+            var pagedEmployees = MappedEmployee
+                                .Skip((pageNumber - 1) * pageSize)
+                                .Take(pageSize)
+                                 .ToList();
+
+
+            var viewModel = new PaginationVM
+            {
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                TotalRecords = totalRecords,
+                // This part is assuming you can assign your paginated list to a collection property in the view model
+                Employees = pagedEmployees
+            };
+
+            return View(viewModel);
 
         }
         [HttpGet]
@@ -46,9 +68,9 @@ namespace CompanyMvc.Controllers
                 employeeVM.ImageName = DocumentSetting.UploadFile(employeeVM.Image, "Images");
                 var MappedEmployees = _mapper.Map<Employee>(employeeVM);
                 await _unitOfWork.EmployeeRepo.AddAsync(MappedEmployees);
-                if(await _unitOfWork.Complete()<=0)
+                if (await _unitOfWork.Complete() <= 0)
                 {
-                    DocumentSetting.DeleteFile(employeeVM.ImageName,"Images");
+                    DocumentSetting.DeleteFile(employeeVM.ImageName, "Images");
                 }
                 TempData["Message"] = "Employee Created Successfully";
                 return RedirectToAction(nameof(Index));
@@ -81,7 +103,7 @@ namespace CompanyMvc.Controllers
             {
                 if (employeeVM.Image is not null)
                 {
-                    DocumentSetting.DeleteFile(employeeVM.ImageName,"Images");
+                    DocumentSetting.DeleteFile(employeeVM.ImageName, "Images");
                     employeeVM.ImageName = DocumentSetting.UploadFile(employeeVM.Image, "Images");
 
                 }

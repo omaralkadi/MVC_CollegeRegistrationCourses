@@ -28,21 +28,20 @@ namespace Company.BLL.Repository
             _dataContext.Set<T>().Remove(Entity);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
-        {
-            if (typeof(T) == typeof(Employee))
-            {
-
-                return (IEnumerable<T>)await _dataContext.Set<Employee>().Include(e => e.departnment).ToListAsync();
-            }
-            return await _dataContext.Set<T>().ToListAsync();
-
-        }
-
         public async Task<T> GetByIdAsync(int id)
         {
             return await _dataContext.Set<T>().FindAsync(id);
         }
 
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            if (typeof(T) == typeof(Employee))
+            {
+
+                return (IEnumerable<T>) await _dataContext.Set<Employee>().Include(e => e.departnment).ToListAsync();
+            }
+            return await _dataContext.Set<T>().ToListAsync();
+
+        }
     }
 }
