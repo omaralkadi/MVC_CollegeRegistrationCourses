@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "i+uQHuSmCnJQ0wY5BABtWYC1/SzF/5NenXBj+0N51Hu56diMjeudQQQRfdL8WP2oakPRET9F/xj6wS1deC7J4A==",
+  "dgSpecHash": "6B7xmPh8Eu8ksuQHD7CErhtchR/TfP9mwJYlA+NRrRnZzhc4aBmBvbJJ7miLpynO0u4+CIhpMmphaC1epQt7wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Omar-ElQady\\OneDrive - Faculty of Computers and Information\\Desktop\\CompanyMvc\\CompanyMvc\\CompanyMvc.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Omar-ElQady\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Omar-ElQady\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Omar-ElQady\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Omar-ElQady\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

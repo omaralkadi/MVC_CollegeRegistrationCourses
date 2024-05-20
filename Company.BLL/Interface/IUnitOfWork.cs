@@ -2,14 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Company.BLL.Interface
 {
-    public interface IEmployeeRepo : IGenericRepo<Employee>
+    public interface IUnitOfWork:IAsyncDisposable
     {
-        IEnumerable<Employee> GetAllByName(Expression<Func<Employee,bool>> expression);
+        public IEmployeeRepo EmployeeRepo { get; set; }
+        public IDepartmentRepo DepartmentRepo { get; set; }
+        Task<int> Complete();
     }
 }

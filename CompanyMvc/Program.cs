@@ -2,6 +2,7 @@ using Company.BLL.Interface;
 using Company.BLL.Repository;
 using Company.DAL.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace CompanyMvc
 {
@@ -20,6 +21,8 @@ namespace CompanyMvc
 
             builder.Services.AddScoped<IDepartmentRepo, DepartmentRepo>();
             builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             var app = builder.Build();
 

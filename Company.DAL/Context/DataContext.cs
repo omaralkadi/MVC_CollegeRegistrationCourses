@@ -15,6 +15,15 @@ namespace Company.DAL.Context
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Department>().HasMany(e => e.Employee)
+                .WithOne(e => e.departnment)
+                .HasForeignKey(e => e.DepartmentId)
+                .IsRequired(false);
+
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
     }

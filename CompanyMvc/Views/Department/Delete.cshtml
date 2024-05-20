@@ -3,6 +3,10 @@
     ViewData["Title"] = "Delete";
 }
 <h1 class="pb-4">Delete Department</h1>
+
+<div asp-validation-summary="All">
+
+</div>
 <form asp-action="Delete" id="deleteForm">
     <div class="mb-3">
         <label asp-for="Code" class="form-label"></label>

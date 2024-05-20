@@ -7,15 +7,15 @@ namespace CompanyMvc.Controllers
 {
     public class DepartmentController : Controller
     {
-        private readonly IDepartmentRepo _departmentRepo;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public DepartmentController(IDepartmentRepo repository)
+        public DepartmentController(IUnitOfWork unitOfWork)
         {
-            _departmentRepo = repository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<IActionResult> Index()
         {
-            var departments = await _departmentRepo.GetAllAsync();
+            var departments = await _unitOfWork.DepartmentRepo.GetAllAsync();
             return View(departments);
         }
         [HttpGet]
@@ -29,7 +29,8 @@ namespace CompanyMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _departmentRepo.AddAsync(department);
+                await _unitOfWork.DepartmentRepo.AddAsync(department);
+                await _unitOfWork.Complete();
                 TempData["Message"] = "Department Created Successfully";
                 return RedirectToAction(nameof(Index));
 
@@ -41,11 +42,11 @@ namespace CompanyMvc.Controllers
 
 
         [HttpGet]
-        public Task<IActionResult> Update(int? id) => ReturnViewWithDepartment(id, nameof(Update));
+        public  Task<IActionResult> Update(int? id) => ReturnViewWithDepartment(id, nameof(Update));
 
 
         [HttpPost]
-        public IActionResult Update(Department department, [FromRoute] int? id)
+        public async Task<IActionResult> Update(Department department, [FromRoute] int? id)
         {
             if (id != department.Id)
             {
@@ -53,7 +54,8 @@ namespace CompanyMvc.Controllers
             }
             if (ModelState.IsValid)
             {
-                _departmentRepo.Update(department);
+                _unitOfWork.DepartmentRepo.Update(department);
+                await _unitOfWork.Complete();
                 return RedirectToAction(nameof(Index));
 
             }
@@ -72,8 +74,17 @@ namespace CompanyMvc.Controllers
             }
             if (ModelState.IsValid)
             {
-                _departmentRepo.Delete(department);
-                return RedirectToAction(nameof(Index));
+                try
+                {
+                    _unitOfWork.DepartmentRepo.Delete(department);
+                    await _unitOfWork.Complete();
+                    return RedirectToAction(nameof(Index));
+
+                }catch (Exception ex) 
+                {
+                    ModelState.AddModelError("","This Department Has Enrolled Employees");
+                }
+
             }
             return View(department);
         }
@@ -82,7 +93,7 @@ namespace CompanyMvc.Controllers
         {
             if (id is null)
                 return BadRequest();
-            var department = await _departmentRepo.GetByIdAsync(id.Value);
+            var department = await _unitOfWork.DepartmentRepo.GetByIdAsync(id.Value);
             if (department is null)
                 return NotFound();
             return View(ViewName, department);

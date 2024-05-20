@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using AutoMapper;
+using Company.DAL.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace Company.DAL.Entities
+namespace CompanyMvc.ViewModels
 {
-    public class Employee
+    public class EmployeeVM
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Name is Required")]
         [MaxLength(30)]
         [MinLength(5)]
         public string Name { get; set; }
-        [Column(TypeName = "Money")]
+        [DataType(DataType.Currency)]
         public decimal Salary { get; set; }
         [Range(20, 60)]
         public int Age { get; set; }
@@ -26,6 +24,7 @@ namespace Company.DAL.Entities
         public string Phone { get; set; }
         public Department? departnment { get; set; }
         public int? DepartmentId { get; set; }
+
 
     }
 }

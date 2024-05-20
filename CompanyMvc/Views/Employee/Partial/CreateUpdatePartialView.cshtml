@@ -1,4 +1,10 @@
-﻿@model Employee
+﻿@model EmployeeVM
+@{
+    var SelectList = new SelectList(ViewBag.departments,"Id","Name");
+}
+<div asp-validation-summary="All">
+
+</div>
 <div class="mb-3">
     <label asp-for="Name" class="form-label"></label>
     <input asp-for="Name" class="form-control">
@@ -9,6 +15,16 @@
     <input asp-for="Salary" class="form-control">
     <span asp-validation-for="Salary" class="text-danger"></span>
 </div>
+
+<div class="mb-3">
+    <label asp-for="departnment" class="form-label"></label>
+    <select class="form-control" asp-items="SelectList" asp-for="DepartmentId">
+        <option value="@null">Select</option>
+        
+    </select>
+    
+</div>
+
 <div class="mb-3">
     <label asp-for="Age" class="form-label"></label>
     <input asp-for="Age" class="form-control">
@@ -38,3 +54,4 @@
     <input asp-for="Phone" class="form-control">
     <span asp-validation-for="Phone" class="text-danger"></span>
 </div>
+
