@@ -80,8 +80,11 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-between">
-            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber - 1)" asp-route-pageSize="@Model.PageSize" class="btn btn-primary @(Model.PageNumber == 1 ? "disabled" : "")">Previous</a>
-            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber + 1)" asp-route-pageSize="@Model.PageSize" class="btn btn-primary @(Model.PageNumber == Model.TotalPages ? "disabled" : "")">Next</a>
+            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber - 1)" asp-route-pageSize="@Model.PageSize" 
+            class="btn btn-primary @(Model.PageNumber == 1 ? "disabled" : "")">Previous</a>
+
+            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber + 1)" asp-route-pageSize="@Model.PageSize" 
+            class="btn btn-primary @(Model.PageNumber == Model.TotalPages ? "disabled" : "")">Next</a>
         </div>
     </div>
 }
