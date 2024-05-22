@@ -18,12 +18,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\CompanyMvc
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/CheckYourInBox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGVja1lvdXJJbkJveC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/ForgetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/PasswordChangedSuccessfully.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQYXNzd29yZENoYW5nZWRTdWNjZXNzZnVsbHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Department/Create.cshtml]

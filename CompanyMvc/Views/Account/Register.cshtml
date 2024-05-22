@@ -3,6 +3,16 @@
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
+<script>
+    function validateForm() {
+        const agreeTerm = document.getElementById("agree-term");
+        if (!agreeTerm.checked) {
+            alert("You must agree all statements in Terms of service.");
+            return false;
+        }
+        return true;
+    }
+</script>
 
 <section class="signup">
     <div class="container">
@@ -11,7 +21,7 @@
         <div class="signup-content">
             <div class="signup-form">
                 <h2 class="form-title">Sign up</h2>
-                <form method="POST" asp-action="Register" class="register-form" id="register-form">
+                <form method="POST" asp-action="Register" class="register-form" id="register-form" onsubmit="return validateForm()">
 
                     <div class="form-group">
                         <label for="name"></label>
@@ -53,10 +63,11 @@
                     <div class="form-group">
 
                         <input type="checkbox" class="checkbox agree-term" id="agree-term" asp-for="Agree">
-                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in 
-                            
+                        <label for="agree-term" class="label-agree-term">
+                            <span><span></span></span>I agree all statements in
+
                             <a href="#" class="term-service">Terms of service </a>
-                            
+
                         </label>
 
                         <span asp-validation-for="Agree" class="text-danger"></span>

@@ -26,7 +26,8 @@ namespace CompanyMvc
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             builder.Services.AddIdentity<AppUser, IdentityRole>()
-                .AddEntityFrameworkStores<DataContext>();
+                .AddEntityFrameworkStores<DataContext>().
+                AddDefaultTokenProviders();
 
             builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
@@ -44,7 +45,7 @@ namespace CompanyMvc
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

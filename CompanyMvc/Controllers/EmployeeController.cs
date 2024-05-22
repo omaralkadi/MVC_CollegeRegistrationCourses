@@ -3,10 +3,12 @@ using Company.BLL.Interface;
 using Company.DAL.Entities;
 using CompanyMvc.Utilities;
 using CompanyMvc.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyMvc.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly IMapper _mapper;
