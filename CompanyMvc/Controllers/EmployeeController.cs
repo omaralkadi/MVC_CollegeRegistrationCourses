@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyMvc.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class EmployeeController : Controller
     {
         private readonly IMapper _mapper;

@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyMvc.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
+
     public class DepartmentController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Omar-ElQady\OneDrive - Faculty of Computers and Information\Desktop\CompanyMvc\CompanyMvc
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Account/CheckYourInBox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGVja1lvdXJJbkJveC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +102,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/AddOrRemoveUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXEFkZE9yUmVtb3ZlVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXGRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/PartialView/CreateEditPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXFBhcnRpYWxWaWV3XENyZWF0ZUVkaXRQYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/PartialView/DetailsDeleteView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXFBhcnRpYWxWaWV3XERldGFpbHNEZWxldGVWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Rolles/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sbGVzXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -112,6 +148,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/User/Partial/CreateUpdatePartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsXENyZWF0ZVVwZGF0ZVBhcnRpYWxWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/User/Partial/DeleteDetailsPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXJ0aWFsXERlbGV0ZURldGFpbHNQYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/User/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Omar-ElQady/OneDrive - Faculty of Computers and Information/Desktop/CompanyMvc/CompanyMvc/Views/_ViewImports.cshtml]

@@ -1,6 +1,7 @@
 ﻿using Company.DAL.Entities;
 using CompanyMvc.Utilities;
 using CompanyMvc.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -154,6 +155,11 @@ namespace CompanyMvc.Controllers
         }
 
         public async Task<IActionResult> PasswordChangedSuccessfully()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> AccessDenied()
         {
             return View();
         }

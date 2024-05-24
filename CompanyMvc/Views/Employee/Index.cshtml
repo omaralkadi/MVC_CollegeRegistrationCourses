@@ -74,7 +74,7 @@
                         <td>@Html.DisplayFor(e => employee.Email)</td>
                         <td>@Html.DisplayFor(e => employee.Phone)</td>
 
-                        <partial name="_ButtonsPartialView" model="@employee.Id"></partial>
+                        <partial name="_ButtonsPartialView" model="@employee.Id.ToString()"></partial>
                     </tr>
                 }
             </tbody>
