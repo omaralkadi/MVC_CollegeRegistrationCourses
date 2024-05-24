@@ -43,13 +43,13 @@ namespace CompanyMvc.Controllers
                                  .ToList();
 
 
-            var viewModel = new PaginationVM
+            var viewModel = new PaginationVM<EmployeeVM>
             {
                 PageNumber = pageNumber,
                 PageSize = pageSize,
                 TotalRecords = totalRecords,
                 // This part is assuming you can assign your paginated list to a collection property in the view model
-                Employees = pagedEmployees
+                Entity = pagedEmployees
             };
 
             return View(viewModel);

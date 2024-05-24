@@ -18,6 +18,23 @@ namespace Company.DAL.Context
                 .HasForeignKey(e => e.DepartmentId)
                 .IsRequired(false);
 
+            modelBuilder.Entity<AppUserCourse>()
+                .HasKey(e => new { e.CourseId, e.UserId });
+
+            modelBuilder.Entity<AppUserCourse>().HasOne(e => e.Course).
+                WithMany(e => e.AppUserCourse).
+                HasForeignKey(e => e.CourseId).
+                IsRequired(false).
+                OnDelete(DeleteBehavior.Restrict);
+
+
+            modelBuilder.Entity<AppUserCourse>().HasOne(e => e.AppUser).
+                WithMany(e => e.AppUserCourse).
+                HasForeignKey(e => e.UserId).
+                IsRequired(false).
+                OnDelete(DeleteBehavior.Restrict);
+
+
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Department> Departments { get; set; }

@@ -1,0 +1,18 @@
+﻿@model Course
+
+<div class="mb-3">
+    <label asp-for="CourseId" class="form-label"></label>
+    <input asp-for="CourseId" class="form-control" readonly>
+    <span asp-validation-for="CourseId" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control" readonly>
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Duration" class="form-label"></label>
+    <input asp-for="Duration" class="form-control" readonly>
+    <span asp-validation-for="Duration" class="text-danger"></span>
+</div>
+

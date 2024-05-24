@@ -12,5 +12,7 @@ namespace Company.DAL.Entities
         public string FName { get; set; }
         public string LName { get; set; }
         public bool Agree { get; set; }
+        public ICollection<AppUserCourse> AppUserCourse { get; set; }
+
     }
 }

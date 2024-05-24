@@ -1,0 +1,10 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 class="pb-4">Course Details</h1>
+
+
+<partial name="partial/DeleteDetailsPartialView"></partial>
+<a asp-action="Update" asp-route-id="@Model.CourseId" class="btn btn-dark">Update</a>
+<a asp-action="Index" class="btn btn-dark">Back</a>

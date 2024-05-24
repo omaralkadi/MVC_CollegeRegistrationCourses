@@ -8,18 +8,19 @@ namespace Company.BLL.Repository
         private readonly DataContext _context;
         public IEmployeeRepo EmployeeRepo { get; set; }
         public IDepartmentRepo DepartmentRepo { get; set; }
+        public ICourseRepo CourseRepo { get; set; }
 
-        public UnitOfWork(IEmployeeRepo employeeRepo, IDepartmentRepo departmentRepo, DataContext context)
+        public UnitOfWork(IEmployeeRepo employeeRepo, IDepartmentRepo departmentRepo, ICourseRepo courseRepo, DataContext context)
         {
             EmployeeRepo = employeeRepo;
             DepartmentRepo = departmentRepo;
+            CourseRepo = courseRepo;
             _context = context;
         }
         public async Task<int> Complete()
         {
             return await _context.SaveChangesAsync();
         }
-
 
         public ValueTask DisposeAsync()
         {

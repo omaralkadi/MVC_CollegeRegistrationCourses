@@ -1,8 +1,8 @@
 ﻿namespace CompanyMvc.ViewModels
 {
-    public class PaginationVM
+    public class PaginationVM<T> where T : class
     {
-        public IEnumerable<EmployeeVM> Employees { get; set; }
+        public IEnumerable<T> Entity { get; set; }
         public int PageNumber { get; set; } 
         public int PageSize { get; set; } 
         public int TotalRecords { get; set; }

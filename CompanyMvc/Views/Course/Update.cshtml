@@ -1,0 +1,25 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 class="pb-4">Update Course</h1>
+
+<form asp-action="Update">
+
+    <div class="mb-3">
+        <label asp-for="CourseId" class="form-label"></label>
+        <input asp-for="CourseId" class="form-control" readonly>
+        <span asp-validation-for="CourseId" class="text-danger"></span>
+    </div>
+
+    <partial name="partial/CreateUpdatePartialView"></partial>
+
+
+    <input type="submit" class="btn btn-primary" value="Submit" />
+    <a asp-action="Index" class="btn btn-dark">Back</a>
+</form>
+
+@section Validation {
+    <partial name="_ValidationScriptsPartial"></partial>
+
+}

@@ -39,9 +39,14 @@ namespace CompanyMvc.Controllers
                     PhoneNumber = registerVM.Phone,
                     UserName = registerVM.FName + registerVM.LName
                 };
+
                 var result = await _userManager.CreateAsync(User, registerVM.Password);
                 if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(User, "Student");
                     return RedirectToAction("Login");
+
+                }
                 else
                 {
                     foreach (var error in result.Errors)
@@ -137,7 +142,7 @@ namespace CompanyMvc.Controllers
             var user = await _userManager.FindByEmailAsync(email);
             if (user is not null)
             {
-                var result=await _userManager.ResetPasswordAsync(user, token, model.Password);
+                var result = await _userManager.ResetPasswordAsync(user, token, model.Password);
                 if (result.Succeeded)
                 {
                     return RedirectToAction(nameof(PasswordChangedSuccessfully));
@@ -149,7 +154,7 @@ namespace CompanyMvc.Controllers
                 }
             }
 
-            ModelState.AddModelError("","Email Does not Exist");
+            ModelState.AddModelError("", "Email Does not Exist");
 
             return View(model);
         }

@@ -1,0 +1,74 @@
+﻿@model PaginationVM<Course>;
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h1 class="text-center pb-4">Course</h1>
+<a  asp-action="Create" class="btn btn-success mb-4">Create New Course</a>
+@if (TempData["Message"] is not null)
+{
+    <div class="alert alert-success">
+        <h1>@TempData["Message"]</h1>
+    </div>
+}
+
+<div class="mt-5 mb-5">
+
+    <form class="row offset-1" asp-action="Index">
+        <div class="col-10">
+            <input type="text" placeholder="Course's Name" class="form-control" name="SeachValue" />
+        </div>
+
+        <div class="col-2">
+            <input type="submit" class="btn btn-primary" value="Search" />
+        </div>
+
+    </form>
+
+</div>
+@if (Model.Entity.Count() > 0)
+{
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Name)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Duration)</th>
+
+                    <th scope="col">Details</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in Model.Entity)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(e => course.Name)</td>
+                        <td>@Html.DisplayFor(e => course.Duration)</td>
+
+                        <partial name="_ButtonsPartialView" model="@course.CourseId.ToString()"></partial>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between">
+            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber - 1)" asp-route-pageSize="@Model.PageSize" 
+            class="btn btn-primary @(Model.PageNumber == 1 ? "disabled" : "")">Previous</a>
+
+            <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber + 1)" asp-route-pageSize="@Model.PageSize" 
+            class="btn btn-primary @(Model.PageNumber == Model.TotalPages ? "disabled" : "")">Next</a>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        No Courses Found
+    </div>
+}
+
+
+

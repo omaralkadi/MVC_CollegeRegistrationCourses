@@ -98,6 +98,38 @@ namespace Company.DAL.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Company.DAL.Entities.AppUserCourse", b =>
+                {
+                    b.Property<string>("CourseId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("CourseId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AppUserCourse", (string)null);
+                });
+
+            modelBuilder.Entity("Company.DAL.Entities.Course", b =>
+                {
+                    b.Property<string>("CourseId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CourseId");
+
+                    b.ToTable("Course", (string)null);
+                });
+
             modelBuilder.Entity("Company.DAL.Entities.Department", b =>
                 {
                     b.Property<int>("Id")
@@ -118,7 +150,7 @@ namespace Company.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("Company.DAL.Entities.Employee", b =>
@@ -165,7 +197,7 @@ namespace Company.DAL.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -301,6 +333,23 @@ namespace Company.DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Company.DAL.Entities.AppUserCourse", b =>
+                {
+                    b.HasOne("Company.DAL.Entities.Course", "Course")
+                        .WithMany("AppUserCourse")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Company.DAL.Entities.AppUser", "AppUser")
+                        .WithMany("AppUserCourse")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Course");
+                });
+
             modelBuilder.Entity("Company.DAL.Entities.Employee", b =>
                 {
                     b.HasOne("Company.DAL.Entities.Department", "departnment")
@@ -359,6 +408,16 @@ namespace Company.DAL.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Company.DAL.Entities.AppUser", b =>
+                {
+                    b.Navigation("AppUserCourse");
+                });
+
+            modelBuilder.Entity("Company.DAL.Entities.Course", b =>
+                {
+                    b.Navigation("AppUserCourse");
                 });
 
             modelBuilder.Entity("Company.DAL.Entities.Department", b =>

@@ -1,4 +1,4 @@
-﻿@model PaginationVM;
+﻿@model PaginationVM<EmployeeVM>;
 
 @{
     ViewData["Title"] = "Employees";
@@ -27,29 +27,29 @@
     </form>
 
 </div>
-@if (Model.Employees.Count() > 0)
+@if (Model.Entity.Count() > 0)
 {
 
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Image)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Name)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Salary)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().departnment)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Age)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().IsActive)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Address)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Email)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Employees.First().Phone)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().ImageName)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Name)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Salary)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().departnment)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Age)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().IsActive)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Address)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Email)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Entity.First().Phone)</th>
                     <th scope="col">Details</th>
                     <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var employee in Model.Employees)
+                @foreach (var employee in Model.Entity)
                 {
                     <tr>
                         <td><img src="~/Files/Images/@employee.ImageName" style="width:50px ;height:50px" /></td>
