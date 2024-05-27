@@ -1,0 +1,19 @@
+﻿@model EmployeeCourse
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 class="pb-4">Details Of Instructor Course</h1>
+
+<div class="mb-3">
+    <label asp-for="Course.Name" class="form-label"></label>
+    <input asp-for="Course.Name" class="form-control"  disabled>
+    <span asp-validation-for="Course.Name" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Employee.Name" class="form-label"></label>
+    <input asp-for="Employee.Name" class="form-control"  disabled>
+    <span asp-validation-for="Employee.Name" class="text-danger"></span>
+</div>
+
+<a asp-action="Update" asp-route-id="@Model.EmployeeId" asp-route-CourseId="@Model.CourseId" class="btn btn-warning">Update</a>
+<a asp-action="Index" class="btn btn-dark">Back</a>

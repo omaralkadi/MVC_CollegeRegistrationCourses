@@ -8,10 +8,10 @@ namespace Company.DAL.Entities
 {
     public class AppUserCourse
     {
-        public string? CourseId { get; set; }
-        public Course Course { get; set; }
-
-        public string? UserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public string CourseId { get; set; }
+        public Course? Course { get; set; }
+        public string UserId { get; set; }
+        public AppUser? AppUser { get; set; }
+        public string InstructorName { get; set; }
     }
 }

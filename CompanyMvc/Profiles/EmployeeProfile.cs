@@ -7,7 +7,7 @@ namespace CompanyMvc.ViewModels
     {
         public EmployeeProfile()
         {
-            CreateMap<EmployeeVM, Employee>().ReverseMap();
+            CreateMap<Employee, EmployeeVM>().ReverseMap();
 
         }
     }

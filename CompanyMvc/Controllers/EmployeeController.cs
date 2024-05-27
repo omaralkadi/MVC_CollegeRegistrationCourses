@@ -79,6 +79,7 @@ namespace CompanyMvc.Controllers
 
             }
             ViewBag.departments = await _unitOfWork.DepartmentRepo.GetAllAsync();
+
             return View(employeeVM);
         }
         [HttpGet]
@@ -89,7 +90,6 @@ namespace CompanyMvc.Controllers
         public async Task<IActionResult> Update(int? id)
         {
             ViewBag.departments = await _unitOfWork.DepartmentRepo.GetAllAsync();
-
             return await ReturnViewWithEmployee(id, nameof(Update));
         }
 

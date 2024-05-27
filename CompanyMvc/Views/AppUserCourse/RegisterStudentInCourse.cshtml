@@ -1,0 +1,65 @@
+﻿@model List<EmployeeCourseVM>
+@{
+    ViewData["Title"] = "RegisterStudentInCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="pb-4">Register Courses</h1>
+<form asp-action="RegisterStudentInCourse">
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Select</th>
+                    <th scope="col"> Course Name</th>
+                    <th scope="col"> Duration</th>
+                    <th scope="col"> Instructor Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <input asp-for="@Model[i].Check"
+                                   data-course-name="@Model[i].CourseName"
+                                   onchange="handleCheckboxChange(this)" />
+                        </td>
+
+                        <td>@Model[i].CourseName</td>
+                        <td>@Model[i].Duration</td>
+                        <td>@Model[i].EmpName</td>
+
+                        <input asp-for="@Model[i].CourseId" type="hidden" />
+                        <input asp-for="@Model[i].UserId" type="hidden" />
+                        <input asp-for="@Model[i].EmpName" type="hidden" />
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    <input type="submit" class="btn btn-primary" value="Submit" />
+</form>
+
+<script>
+    function handleCheckboxChange(checkbox) {
+        var courseName = checkbox.getAttribute('data-course-name');
+        var checkboxes = document.querySelectorAll('input[data-course-name="' + courseName + '"]');
+
+        if (checkbox.checked) {
+            checkboxes.forEach(function (cb) {
+                if (cb !== checkbox) {
+                    cb.disabled = true;
+                }
+            });
+        } else {
+            checkboxes.forEach(function (cb) {
+                cb.disabled = false;
+            });
+        }
+    }
+</script>

@@ -1,0 +1,36 @@
+﻿@model EmployeeCourse
+@{
+    ViewData["Title"] = "Update";
+    var SelectedEmployees = new SelectList(ViewBag.Employees, "Id", "Name");
+    var SelectedCourses = new SelectList(ViewBag.Courses, "CourseId", "Name");
+}
+<div asp-validation-summary="All"></div>
+
+<h1 class="pb-4">Update Instructor Course</h1>
+
+<form asp-action="Update">
+
+    <input type="hidden" name="OldEmpId" value="@Model.EmployeeId" />
+    <input type="hidden" name="OldCourId" value="@Model.CourseId" />
+
+    <div class="mb-3">
+        <label asp-for="Course" class="form-label"></label>
+        <select asp-for="CourseId" asp-items="SelectedCourses" class="form-control">
+            <option value="@null">
+                Select Course
+            </option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Employee" class="form-label"></label>
+        <select asp-for="EmployeeId" asp-items="SelectedEmployees" class="form-control">
+            <option value="@null">
+                Select Employee
+            </option>
+        </select>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Submit" />
+    <a asp-action="Index" class="btn btn-dark">Back</a>
+</form>

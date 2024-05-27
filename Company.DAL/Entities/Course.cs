@@ -16,6 +16,7 @@ namespace Company.DAL.Entities
         [Range(1,12)]
         public int Duration { get; set; }
         public ICollection<AppUserCourse>? AppUserCourse { get; set; }
+        public IEnumerable<EmployeeCourse>? employees { get; set; }
 
 
     }

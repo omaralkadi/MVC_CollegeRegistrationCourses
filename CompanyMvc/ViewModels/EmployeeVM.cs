@@ -24,7 +24,6 @@ namespace CompanyMvc.ViewModels
         public string? ImageName { get; set; }
         public Department? departnment { get; set; }
         public int? DepartmentId { get; set; }
-
-
+        public ICollection<EmployeeCourse>? Courses { get; set; }
     }
 }

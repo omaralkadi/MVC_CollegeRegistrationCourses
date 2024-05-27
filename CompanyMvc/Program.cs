@@ -27,6 +27,8 @@ namespace CompanyMvc
             builder.Services.AddScoped<IDepartmentRepo, DepartmentRepo>();
             builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
             builder.Services.AddScoped<ICourseRepo, CourseRepo>();
+            builder.Services.AddScoped<IAppUserCourse, AppUserCourseRepo>();
+            builder.Services.AddScoped<IEmployeeCourse, EmployeeCourseRepo>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             builder.Services.AddIdentity<AppUser, IdentityRole>()

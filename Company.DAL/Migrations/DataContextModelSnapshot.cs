@@ -106,11 +106,14 @@ namespace Company.DAL.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("CourseId", "UserId");
+                    b.Property<string>("InstructorName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("CourseId", "UserId", "InstructorName");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AppUserCourse", (string)null);
+                    b.ToTable("appUserCourses");
                 });
 
             modelBuilder.Entity("Company.DAL.Entities.Course", b =>
@@ -127,7 +130,7 @@ namespace Company.DAL.Migrations
 
                     b.HasKey("CourseId");
 
-                    b.ToTable("Course", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Company.DAL.Entities.Department", b =>
@@ -150,7 +153,7 @@ namespace Company.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments", (string)null);
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("Company.DAL.Entities.Employee", b =>
@@ -197,7 +200,22 @@ namespace Company.DAL.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Employees", (string)null);
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("Company.DAL.Entities.EmployeeCourse", b =>
+                {
+                    b.Property<string>("CourseId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CourseId", "EmployeeId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("EmployeeCourses");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -359,6 +377,23 @@ namespace Company.DAL.Migrations
                     b.Navigation("departnment");
                 });
 
+            modelBuilder.Entity("Company.DAL.Entities.EmployeeCourse", b =>
+                {
+                    b.HasOne("Company.DAL.Entities.Course", "Course")
+                        .WithMany("employees")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Company.DAL.Entities.Employee", "Employee")
+                        .WithMany("Courses")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -418,11 +453,18 @@ namespace Company.DAL.Migrations
             modelBuilder.Entity("Company.DAL.Entities.Course", b =>
                 {
                     b.Navigation("AppUserCourse");
+
+                    b.Navigation("employees");
                 });
 
             modelBuilder.Entity("Company.DAL.Entities.Department", b =>
                 {
                     b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Company.DAL.Entities.Employee", b =>
+                {
+                    b.Navigation("Courses");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,49 @@
+﻿@model EmployeeCourse
+@{
+    ViewData["Title"] = "Delete";
+}
+<h1 class="pb-4">Delete</h1>
+
+<div asp-validation-summary="All">
+
+</div>
+<form asp-action="Delete" id="deleteForm">
+
+    <div class="mb-3">
+        <label asp-for="Course.Name" class="form-label"></label>
+        <input class="form-control" value="@Model.Course.Name" readonly/>
+        <input asp-for="CourseId" class="form-control" type="hidden">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Employee.Name" class="form-label"></label>
+        <input class="form-control" value="@Model.Employee.Name" readonly />
+        <input asp-for="EmployeeId" class="form-control" type="hidden">
+    </div>
+    <input type="submit" class="btn btn-danger" value="Delete" id="deleteButton" />
+    <a asp-action="Index" class="btn btn-dark">Back</a>
+</form>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("deleteButton").addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // If the user confirms the deletion, submit the form
+                        document.getElementById("deleteForm").submit();
+                    }
+                });
+            });
+        });
+    </script>
+}

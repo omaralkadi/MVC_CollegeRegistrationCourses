@@ -40,8 +40,32 @@ namespace Company.BLL.Repository
 
                 return (IEnumerable<T>) await _dataContext.Set<Employee>().Include(e => e.departnment).ToListAsync();
             }
+            if(typeof(T)== typeof(EmployeeCourse)) 
+            {
+                return (IEnumerable<T>)await _dataContext.Set<EmployeeCourse>().Include(e => e.Course).Include(e=>e.Employee).ToListAsync();
+
+            }
+            if (typeof(T) == typeof(AppUserCourse))
+            {
+                return (IEnumerable<T>)await _dataContext.Set<AppUserCourse>().Include(e => e.Course).Include(e => e.AppUser).ToListAsync();
+
+            }
+
             return await _dataContext.Set<T>().ToListAsync();
 
         }
+        public async Task<T> GetByCompositeKeyAsync(string CourseId,int id)
+        {
+            return await _dataContext.Set<T>().FindAsync(CourseId,id);
+        }
+        public async Task<T> GetByCompositeKeyAsync(string CourseId, string id)
+        {
+            return await _dataContext.Set<T>().FindAsync(CourseId, id);
+        }
+        public async Task<T> GetByCompositeKeyAsync(string CourseId, string id,string Name)
+        {
+            return await _dataContext.Set<T>().FindAsync(CourseId, id,Name);
+        }
+
     }
 }

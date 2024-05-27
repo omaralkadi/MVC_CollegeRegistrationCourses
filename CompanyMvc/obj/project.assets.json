@@ -10923,6 +10923,7 @@
     "net6.0": [
       "AutoMapper >= 13.0.1",
       "Company.BLL >= 1.0.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.30",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.30",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
     ]
@@ -10973,6 +10974,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.30, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
