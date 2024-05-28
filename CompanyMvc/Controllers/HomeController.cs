@@ -10,7 +10,6 @@ using System.Diagnostics;
 
 namespace CompanyMvc.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -26,7 +25,7 @@ namespace CompanyMvc.Controllers
             _unitOfWork = unitOfWork;
             _userManager = userManager;
         }
-
+        [Authorize(Roles ="Student")]
         public async Task<IActionResult> Index()
         {
             var user=await _userManager.GetUserAsync(User);
@@ -37,6 +36,7 @@ namespace CompanyMvc.Controllers
             return View(LoginUserCourses);
         }
 
+        [Authorize(Roles = "Instructor")]
         public async Task<IActionResult> InstructorCourses()
         {
             var employeeCourses = await _unitOfWork.EmployeeCourse.GetAllAsync();

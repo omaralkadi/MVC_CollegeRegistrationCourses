@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "Company.BLL": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Google": "6.0.30",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.30",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.30",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16"
@@ -595,6 +596,14 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
+      "Microsoft.AspNetCore.Authentication.Google/6.0.30": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "6.0.30.0",
+            "fileVersion": "6.0.3024.21619"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.30": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
@@ -2942,6 +2951,13 @@
       "sha512": "sha512-uJhZlGMkXDaFYsH8V9S6o1EyvsUqB9mpU4DVBXNr0DXZVzZMhuLP1IkLj5xK3EKlaAcvkFkZv3eSvuz360wb3Q==",
       "path": "messagepackanalyzer/2.1.152",
       "hashPath": "messagepackanalyzer.2.1.152.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.30": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PJEgAoei+eD0DWABGWQqkAPOnrCKtTOCXBM3VwkwoVvt6W47gSptXMCkfX5UvMbTop2LEf2EncUJXBjw+7RE0A==",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.30",
+      "hashPath": "microsoft.aspnetcore.authentication.google.6.0.30.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.30": {
       "type": "package",

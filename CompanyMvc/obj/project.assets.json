@@ -650,6 +650,22 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
+      "Microsoft.AspNetCore.Authentication.Google/6.0.30": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/6.0.30": {
         "type": "package",
         "compile": {
@@ -4662,6 +4678,21 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.30": {
+      "sha512": "PJEgAoei+eD0DWABGWQqkAPOnrCKtTOCXBM3VwkwoVvt6W47gSptXMCkfX5UvMbTop2LEf2EncUJXBjw+7RE0A==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.30",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.6.0.30.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.30": {
@@ -10923,6 +10954,7 @@
     "net6.0": [
       "AutoMapper >= 13.0.1",
       "Company.BLL >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 6.0.30",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.30",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.30",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16"
@@ -10974,6 +11006,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[6.0.30, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",

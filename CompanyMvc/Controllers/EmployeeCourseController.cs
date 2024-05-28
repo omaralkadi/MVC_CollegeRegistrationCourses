@@ -2,11 +2,13 @@
 using Company.BLL.Repository;
 using Company.DAL.Context;
 using Company.DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CompanyMvc.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class EmployeeCourseController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

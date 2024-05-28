@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Nl4jvFojwd+xM5ElAEovl/zV87tUpLlIEI45dDrAIwo=",
+  "Hash": "fnR0ZdExcbvBujQ744hKvqHDLjpI3s7t54xYb5B56wQ=",
   "Source": "CompanyMvc",
   "BasePath": "_content/CompanyMvc",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Files\\Images\\283f0b21-57f5-48ab-8768-8b84df57ea64-download.png"
+    },
+    {
+      "Identity": "C:\\Users\\Omar-ElQady\\OneDrive - Faculty of Computers and Information\\Desktop\\CompanyMvc\\CompanyMvc\\wwwroot\\Files\\Images\\3ff26ddd-06d5-483f-9176-6063db4ae028-6818210.png",
+      "SourceId": "CompanyMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Omar-ElQady\\OneDrive - Faculty of Computers and Information\\Desktop\\CompanyMvc\\CompanyMvc\\wwwroot\\",
+      "BasePath": "_content/CompanyMvc",
+      "RelativePath": "Files/Images/3ff26ddd-06d5-483f-9176-6063db4ae028-6818210.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\Images\\3ff26ddd-06d5-483f-9176-6063db4ae028-6818210.png"
     },
     {
       "Identity": "C:\\Users\\Omar-ElQady\\OneDrive - Faculty of Computers and Information\\Desktop\\CompanyMvc\\CompanyMvc\\wwwroot\\Files\\Images\\62a5bf6a-3a90-4965-919b-b0f66b3cc5ad-6818210.png",

@@ -4,9 +4,12 @@ using Company.DAL.Context;
 using Company.DAL.Entities;
 using CompanyMvc.Utilities;
 using CompanyMvc.ViewModels;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System.Configuration;
 using System.Reflection;
 
 namespace CompanyMvc
@@ -31,6 +34,9 @@ namespace CompanyMvc
             builder.Services.AddScoped<IEmployeeCourse, EmployeeCourseRepo>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+
+
+
             builder.Services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>().
                 AddDefaultTokenProviders();
@@ -43,7 +49,7 @@ namespace CompanyMvc
                 option.AccessDeniedPath = "/Account/AccessDenied";
             });
 
-         
+
 
             var app = builder.Build();
 
@@ -54,6 +60,7 @@ namespace CompanyMvc
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
 
             await SeedingData.Seeding(app);
 

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CompanyMvc.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Student")]
     public class AppUserCourseController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

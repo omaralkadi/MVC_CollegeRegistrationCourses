@@ -1,10 +1,8 @@
 ﻿using Company.DAL.Entities;
 using CompanyMvc.Utilities;
 using CompanyMvc.ViewModels;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace CompanyMvc.Controllers
 {
@@ -73,8 +71,12 @@ namespace CompanyMvc.Controllers
                 if (User is not null)
                 {
                     var UserName = await _signInManager.PasswordSignInAsync(User, loginVM.Password, loginVM.RememberMe, false);
-                    if (UserName.Succeeded)
-                        return RedirectToAction("Index", "Home");
+                    if (UserName.Succeeded && await _userManager.IsInRoleAsync(User, "Admin"))
+                    {
+                        return RedirectToAction("Index", "Course");
+
+                    }
+                    return RedirectToAction("Index", "Home");
 
                 }
                 ModelState.AddModelError("", "InCorrect Email Or Password ");
@@ -92,6 +94,8 @@ namespace CompanyMvc.Controllers
         {
             return View();
         }
+
+
         [HttpPost]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordVM model)
         {
