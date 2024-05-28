@@ -7,7 +7,9 @@ To Build This Project I Used:
 
 1- Repository architecture design pattern That Consist of Presenation Layer And Business Layer And Data Layer to enhance maintainability and Scalability
 
-2-Unit Of Work To improved performance, reduced coupling between repositories and the database, and easier testability
+2-Generic Repository Is a way to minimize redundant code
+
+3-Unit Of Work To improved performance, reduced coupling between repositories and the database, and easier testability
 
 3-Identity DbContext To Handel Users And Roles
 
